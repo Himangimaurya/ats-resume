@@ -1,4 +1,4 @@
-/* Beautiful animated background */
+/* Animated background */
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +6,7 @@ body {
   background-size: 400% 400%;
   animation: gradientMove 10s ease infinite;
 }
+
 
 @keyframes gradientMove {
   0% {
