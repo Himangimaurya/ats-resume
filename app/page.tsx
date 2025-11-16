@@ -1,60 +1,83 @@
-"use client";
-import { useRouter } from "next/navigation";
-
-export default function Home() {
-  const router = useRouter();
-
+export default function HomePage() {
   return (
-    <div className="home-bg">
-      <div className="home-overlay"></div>
-
-      <div
+    <div className="home-bg" style={{ textAlign: "center", paddingTop: "40px" }}>
+      <h1
         style={{
-          position: "relative",
-          zIndex: 10,
-          textAlign: "center",
-          paddingTop: "120px",
-          color: "white",
+          marginTop: "20px",
+          marginBottom: "30px",
         }}
       >
-        <h1 style={{ fontSize: "40px", marginBottom: "40px", fontWeight: 700 }}>
-          AI Resume Builder
-        </h1>
+        AI Resume Builder
+      </h1>
 
-        <button
-          onClick={() => router.push("/upload")}
-          style={{
-            background: "#007bff",
-            color: "white",
-            padding: "15px 32px",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            cursor: "pointer",
-            marginBottom: "20px",
-            width: "230px",
-          }}
-        >
-          Upload Resume
-        </button>
-        <br />
+      {/* Upload Resume Button */}
+      <button
+        onClick={() => (window.location.href = "/upload")}
+        style={{
+          padding: "12px 22px",
+          backgroundColor: "#007bff",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+          marginBottom: "15px",
+        }}
+      >
+        Upload Resume
+      </button>
 
-        <button
-          onClick={() => router.push("/form")}
-          style={{
-            background: "#007bff",
-            color: "white",
-            padding: "15px 32px",
-            border: "none",
-            borderRadius: "8px",
-            fontSize: "18px",
-            cursor: "pointer",
-            width: "230px",
-          }}
-        >
-          Fill Resume Manually
-        </button>
-      </div>
+      <br />
+
+      {/* Template 1 Button */}
+      <button
+        onClick={() => (window.location.href = "/template/template1")}
+        style={{
+          padding: "12px 22px",
+          backgroundColor: "#28a745",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+          marginBottom: "15px",
+        }}
+      >
+        Template 1
+      </button>
+
+      <br />
+
+      {/* Template 2 Button */}
+      <button
+        onClick={() => (window.location.href = "/template/template2")}
+        style={{
+          padding: "12px 22px",
+          backgroundColor: "#ffc107",
+          color: "black",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+          marginBottom: "15px",
+        }}
+      >
+        Template 2
+      </button>
+
+      <br />
+
+      {/* Template 3 Button */}
+      <button
+        onClick={() => (window.location.href = "/template/template3")}
+        style={{
+          padding: "12px 22px",
+          backgroundColor: "#6f42c1",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        Template 3
+      </button>
     </div>
   );
 }
