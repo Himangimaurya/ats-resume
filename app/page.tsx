@@ -1,26 +1,38 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 export default function Home() {
+  const router = useRouter();
+
+  const btnStyle = {
+    padding: "10px 20px",
+    margin: "10px 0",
+    fontSize: "18px",
+    background: "#007bff",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  };
+
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div style={{ textAlign: "center", marginTop: "80px" }}>
       <h1>AI Resume Builder</h1>
 
-      <div style={{ marginTop: "30px" }}>
-        <a href="/upload" style={button}>Upload Resume</a>
-        <br /><br />
-        <a href="/form" style={button}>Fill Resume Manually</a>
-      </div>
+      {/* Upload Resume */}
+      <button onClick={() => router.push("/upload")} style={btnStyle}>
+        Upload Resume
+      </button>
+
+      {/* Fill Resume Manually */}
+      <button onClick={() => router.push("/form")} style={btnStyle}>
+        Fill Resume Manually
+      </button>
+
+      {/* Choose Template Page */}
+      <button onClick={() => router.push("/template")} style={btnStyle}>
+        Choose Resume Template
+      </button>
     </div>
   );
 }
-
-const button = {
-  padding: "12px 20px",
-  background: "#0070f3",
-  color: "white",
-  textDecoration: "none",
-  borderRadius: "8px",
-  fontWeight: "600",
-};
-
-  
-          
-              
