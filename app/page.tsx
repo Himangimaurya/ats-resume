@@ -1,37 +1,50 @@
-"use client";
-import { useRouter } from "next/navigation";
-
 export default function Home() {
-  const router = useRouter();
-
-  const btnStyle = {
-    padding: "10px 20px",
-    margin: "10px 0",
-    fontSize: "18px",
-    background: "#007bff",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-  };
-
   return (
-    <div style={{ textAlign: "center", marginTop: "80px" }}>
-      <h1>AI Resume Builder</h1>
+    <div
+      style={{
+        minHeight: "100vh",
+        paddingTop: "80px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "start",
+        background: "linear-gradient(135deg, #e3f2fd, #bbdefb, #90caf9)", // elegant classy gradient
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      <h1 style={{ fontSize: "2rem", marginBottom: "30px", color: "#0d47a1" }}>
+        AI Resume Builder
+      </h1>
 
-      {/* Upload Resume */}
-      <button onClick={() => router.push("/upload")} style={btnStyle}>
+      <button
+        onClick={() => (window.location.href = "/upload")}
+        style={{
+          padding: "12px 30px",
+          backgroundColor: "#1976d2",
+          color: "white",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+          marginBottom: "20px",
+          fontSize: "16px",
+        }}
+      >
         Upload Resume
       </button>
 
-      {/* Fill Resume Manually */}
-      <button onClick={() => router.push("/form")} style={btnStyle}>
+      <button
+        onClick={() => (window.location.href = "/form")}
+        style={{
+          padding: "12px 30px",
+          backgroundColor: "#0d47a1",
+          color: "white",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+          fontSize: "16px",
+        }}
+      >
         Fill Resume Manually
-      </button>
-
-      {/* Choose Template Page */}
-      <button onClick={() => router.push("/template")} style={btnStyle}>
-        Choose Resume Template
       </button>
     </div>
   );
