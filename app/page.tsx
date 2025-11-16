@@ -16,6 +16,7 @@ export default function HomePage() {
       <h2 className="template-title">Choose a Template</h2>
 
       <div className="template-container">
+
         <div
           className="template-card"
           onClick={() => (window.location.href = "/template/template1")}
@@ -36,6 +37,7 @@ export default function HomePage() {
         >
           Template 3
         </div>
+
       </div>
     </div>
   );
