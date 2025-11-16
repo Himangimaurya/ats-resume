@@ -1,0 +1,19 @@
+/* ===== Homepage Background Image ===== */
+.home-bg {
+  background-image: url('/bg.jpg'); /* You will add bg.jpg in public */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Dark overlay for classy effect */
+.home-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* Smooth dark layer */
+  backdrop-filter: blur(4px); /* Blur effect */
+}
+

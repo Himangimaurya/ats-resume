@@ -1,51 +1,60 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 export default function Home() {
+  const router = useRouter();
+
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        paddingTop: "80px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "start",
-        background: "linear-gradient(135deg, #e3f2fd, #bbdefb, #90caf9)", // elegant classy gradient
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
-      <h1 style={{ fontSize: "2rem", marginBottom: "30px", color: "#0d47a1" }}>
-        AI Resume Builder
-      </h1>
+    <div className="home-bg">
+      <div className="home-overlay"></div>
 
-      <button
-        onClick={() => (window.location.href = "/upload")}
+      <div
         style={{
-          padding: "12px 30px",
-          backgroundColor: "#1976d2",
+          position: "relative",
+          zIndex: 10,
+          textAlign: "center",
+          paddingTop: "120px",
           color: "white",
-          border: "none",
-          borderRadius: "8px",
-          cursor: "pointer",
-          marginBottom: "20px",
-          fontSize: "16px",
         }}
       >
-        Upload Resume
-      </button>
+        <h1 style={{ fontSize: "40px", marginBottom: "40px", fontWeight: 700 }}>
+          AI Resume Builder
+        </h1>
 
-      <button
-        onClick={() => (window.location.href = "/form")}
-        style={{
-          padding: "12px 30px",
-          backgroundColor: "#0d47a1",
-          color: "white",
-          border: "none",
-          borderRadius: "8px",
-          cursor: "pointer",
-          fontSize: "16px",
-        }}
-      >
-        Fill Resume Manually
-      </button>
+        <button
+          onClick={() => router.push("/upload")}
+          style={{
+            background: "#007bff",
+            color: "white",
+            padding: "15px 32px",
+            border: "none",
+            borderRadius: "8px",
+            fontSize: "18px",
+            cursor: "pointer",
+            marginBottom: "20px",
+            width: "230px",
+          }}
+        >
+          Upload Resume
+        </button>
+        <br />
+
+        <button
+          onClick={() => router.push("/form")}
+          style={{
+            background: "#007bff",
+            color: "white",
+            padding: "15px 32px",
+            border: "none",
+            borderRadius: "8px",
+            fontSize: "18px",
+            cursor: "pointer",
+            width: "230px",
+          }}
+        >
+          Fill Resume Manually
+        </button>
+      </div>
     </div>
   );
 }
