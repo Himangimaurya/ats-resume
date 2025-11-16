@@ -1,10 +1,18 @@
 export default function HomePage() {
   return (
-    <div className="home-bg" style={{ textAlign: "center", paddingTop: "40px" }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        padding: "40px 20px",
+        textAlign: "center",
+        background: "linear-gradient(135deg, #e3f2ff, #f8faff)",
+      }}
+    >
       <h1
         style={{
-          marginTop: "20px",
-          marginBottom: "30px",
+          fontSize: "32px",
+          fontWeight: "bold",
+          marginBottom: "40px",
         }}
       >
         AI Resume Builder
@@ -14,70 +22,109 @@ export default function HomePage() {
       <button
         onClick={() => (window.location.href = "/upload")}
         style={{
-          padding: "12px 22px",
+          padding: "12px 26px",
           backgroundColor: "#007bff",
           color: "white",
           border: "none",
-          borderRadius: "5px",
+          borderRadius: "8px",
           cursor: "pointer",
-          marginBottom: "15px",
+          fontSize: "16px",
+          marginBottom: "40px",
+          transition: "0.3s",
         }}
+        onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+        onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
       >
         Upload Resume
       </button>
 
-      <br />
+      <h2 style={{ marginBottom: "20px", marginTop: "10px" }}>Choose a Template</h2>
 
-      {/* Template 1 Button */}
-      <button
-        onClick={() => (window.location.href = "/template/template1")}
+      {/* Template Cards */}
+      <div
         style={{
-          padding: "12px 22px",
-          backgroundColor: "#28a745",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-          marginBottom: "15px",
+          display: "flex",
+          justifyContent: "center",
+          gap: "20px",
+          flexWrap: "wrap",
+          marginTop: "20px",
         }}
       >
-        Template 1
-      </button>
+        {/* Template 1 */}
+        <div
+          onClick={() => (window.location.href = "/template/template1")}
+          style={{
+            width: "220px",
+            padding: "20px",
+            background: "white",
+            borderRadius: "10px",
+            boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+            cursor: "pointer",
+            transition: "0.3s",
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.transform = "scale(1.05)";
+            e.currentTarget.style.boxShadow = "0 8px 18px rgba(0,0,0,0.15)";
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
+            e.currentTarget.style.boxShadow = "0 4px 10px rgba(0,0,0,0.1)";
+          }}
+        >
+          <h3 style={{ marginBottom: "5px" }}>Template 1</h3>
+          <p style={{ fontSize: "14px", color: "#555" }}>Simple & Professional</p>
+        </div>
 
-      <br />
+        {/* Template 2 */}
+        <div
+          onClick={() => (window.location.href = "/template/template2")}
+          style={{
+            width: "220px",
+            padding: "20px",
+            background: "white",
+            borderRadius: "10px",
+            boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+            cursor: "pointer",
+            transition: "0.3s",
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.transform = "scale(1.05)";
+            e.currentTarget.style.boxShadow = "0 8px 18px rgba(0,0,0,0.15)";
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
+            e.currentTarget.style.boxShadow = "0 4px 10px rgba(0,0,0,0.1)";
+          }}
+        >
+          <h3 style={{ marginBottom: "5px" }}>Template 2</h3>
+          <p style={{ fontSize: "14px", color: "#555" }}>Creative & Modern</p>
+        </div>
 
-      {/* Template 2 Button */}
-      <button
-        onClick={() => (window.location.href = "/template/template2")}
-        style={{
-          padding: "12px 22px",
-          backgroundColor: "#ffc107",
-          color: "black",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-          marginBottom: "15px",
-        }}
-      >
-        Template 2
-      </button>
-
-      <br />
-
-      {/* Template 3 Button */}
-      <button
-        onClick={() => (window.location.href = "/template/template3")}
-        style={{
-          padding: "12px 22px",
-          backgroundColor: "#6f42c1",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-        }}
-      >
-        Template 3
-      </button>
+        {/* Template 3 */}
+        <div
+          onClick={() => (window.location.href = "/template/template3")}
+          style={{
+            width: "220px",
+            padding: "20px",
+            background: "white",
+            borderRadius: "10px",
+            boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+            cursor: "pointer",
+            transition: "0.3s",
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.transform = "scale(1.05)";
+            e.currentTarget.style.boxShadow = "0 8px 18px rgba(0,0,0,0.15)";
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
+            e.currentTarget.style.boxShadow = "0 4px 10px rgba(0,0,0,0.1)";
+          }}
+        >
+          <h3 style={{ marginBottom: "5px" }}>Template 3</h3>
+          <p style={{ fontSize: "14px", color: "#555" }}>Minimal & Clean</p>
+        </div>
+      </div>
     </div>
   );
 }
